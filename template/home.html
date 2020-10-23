@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">    <title></title>
+
+  </head>
+        <body>
+            <div>
+
+              <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                        <h1>User list</h1>
+                         <p>active period</p>
+                     </div>
+                      </div>
+
+
+            <nav class="navbar  mynav" role="navigation" id="navbar">
+            <div class="container">
+            {%  block body-block  %}
+
+            <ul class="nav navbar-nav navbar-right">
+
+             {% for usernames in details1 %}
+
+                 <a href="{{usernames.id}}" target='_blank'>{{usernames.fieldid}}</a>
+                   <div><strong>id:</strong> {{usernames.fieldid}}</div>
+                   <div><strong>name: </strong>{{usernames.real_name}}</div>
+                   <div><strong>addres:</strong> {{usernames.tz}}</div>
+                   </br>
+
+              {% endfor %}
+
+          </ul>
+
+            {% endblock %}
+          </div>
+        </div>
+      </nav>
+        </body>
+</html>
